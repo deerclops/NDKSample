@@ -10,4 +10,12 @@ public class HelloNdk {
     }
 
     public static native String sayHello();
+
+    public static native void callStaticMethod(int i);
+
+    public static native void callStaticMethod(long l, String str);
+
+    public native void callIntanceMethod(int i);
+
+    public native void callIntanceMethod(String str, long i);
 }
