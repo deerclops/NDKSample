@@ -23,11 +23,20 @@ JNIEXPORT void JNICALL Java_ndk_deerclops_com_ndksample_HelloNdk_callStaticMetho
     }
     LOGI("class found");
     jmethodID mth_static_method = env->GetStaticMethodID(cls_hello, "staticMethod",
-                                                   "(Ljava/lang/String;)V");
+                                                         "(Ljava/lang/String;)V");
     if (mth_static_method == NULL) {
         return;
     }
     LOGI("method found");
+
+    jfieldID fld_name = env->GetStaticFieldID(cls_hello, "name", "Ljava/lang/String;");
+    if (fld_name == NULL) {
+        return;
+    }
+    jstring new_name = env->NewStringUTF("this is a new name");
+    env->SetStaticObjectField(cls_hello, fld_name, new_name);
+    LOGI("filed name is set a new value");
+
     jstring data = env->NewStringUTF("call static method");
     if (data == NULL) {
         return;

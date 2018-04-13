@@ -7,6 +7,8 @@ import android.util.Log;
  */
 public class HelloNdk {
 
+    private static String name = "nate";
+
     static {
         System.loadLibrary("hello");
     }
@@ -19,6 +21,7 @@ public class HelloNdk {
 
     public static void staticMethod(String data) {
         logMsg(data);
+        logMsg(name);
     }
 
     public static native void callStaticMethod(int i);
