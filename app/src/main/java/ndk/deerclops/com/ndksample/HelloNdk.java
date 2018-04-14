@@ -13,6 +13,10 @@ public class HelloNdk {
         System.loadLibrary("hello");
     }
 
+    private String address = "WuHan";
+
+    public HelloNdk(){}
+
     public static native String sayHello();
 
     public static void logMsg(String data) {
@@ -22,6 +26,10 @@ public class HelloNdk {
     public static void staticMethod(String data) {
         logMsg(data);
         logMsg(name);
+    }
+
+    public void method(String data){
+        logMsg(data);
     }
 
     public static native void callStaticMethod(int i);

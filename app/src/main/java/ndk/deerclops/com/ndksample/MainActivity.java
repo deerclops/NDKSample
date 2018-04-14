@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 HelloNdk.callStaticMethod(777);
 
+                new HelloNdk().callIntanceMethod(222);
+
                 Toast.makeText(MainActivity.this, HelloNdk.sayHello(), Toast.LENGTH_SHORT).show();
             }
         });

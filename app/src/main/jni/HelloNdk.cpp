@@ -58,7 +58,38 @@ Java_ndk_deerclops_com_ndksample_HelloNdk_callStaticMethod__JLjava_lang_String_2
 
 JNIEXPORT void JNICALL Java_ndk_deerclops_com_ndksample_HelloNdk_callIntanceMethod__I
         (JNIEnv *env, jobject jobject1, jint jint1) {
+    jclass cls_hello = env->FindClass("ndk/deerclops/com/ndksample/HelloNdk");
+    if (cls_hello == NULL) {
+        return;
+    }
+    jmethodID mtd_method = env->GetMethodID(cls_hello, "method", "(Ljava/lang/String;)V");
+    if (mtd_method == NULL) {
+        return;
+    }
 
+    // create Hello obj
+    jmethodID mtd_construct = env->GetMethodID(cls_hello, "<init>", "()V");
+    if (mtd_construct == NULL) {
+        return;
+    }
+    jobject hello = env->NewObject(cls_hello, mtd_construct, NULL);
+    if (hello == NULL) {
+        return;
+    }
+//    jstring msg = env->NewStringUTF("call instance method");
+//    env->CallVoidMethod(hello, mtd_method, msg);
+
+    jfieldID fld_address = env->GetFieldID(cls_hello, "address", "Ljava/lang/String;");
+    if (fld_address == NULL) {
+        return;
+    }
+    env->SetObjectField(hello, fld_address, env->NewStringUTF("this is a new address"));
+
+    env->CallVoidMethod(hello, mtd_method, env->GetObjectField(hello, fld_address));
+
+//    env->DeleteLocalRef(msg);
+    env->DeleteLocalRef(cls_hello);
+    env->DeleteLocalRef(hello);
 }
 
 JNIEXPORT void JNICALL
