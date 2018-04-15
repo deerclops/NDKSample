@@ -47,6 +47,14 @@ JNIEXPORT void JNICALL Java_ndk_deerclops_com_ndksample_HelloNdk_callIntanceMeth
 JNIEXPORT void JNICALL Java_ndk_deerclops_com_ndksample_HelloNdk_callIntanceMethod__Ljava_lang_String_2J
   (JNIEnv *, jobject, jstring, jlong);
 
+/*
+ * Class:     ndk_deerclops_com_ndksample_HelloNdk
+ * Method:    makeCrash
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_ndk_deerclops_com_ndksample_HelloNdk_makeCrash
+  (JNIEnv *, jclass);
+
 #ifdef __cplusplus
 }
 #endif

@@ -5,23 +5,37 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+    }
 
+    private void toast(String str) {
+        Toast.makeText(this, str, Toast.LENGTH_SHORT).show();
+    }
 
-        findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                HelloNdk.callStaticMethod(777);
+    @OnClick(R.id.tv)
+    public void testNdkOfCPlusPlus() {
+        HelloNdk.callStaticMethod(777);
 
-                new HelloNdk().callIntanceMethod(222);
+        new HelloNdk().callIntanceMethod(222);
+        toast(HelloNdk.sayHello());
+    }
 
-                Toast.makeText(MainActivity.this, HelloNdk.sayHello(), Toast.LENGTH_SHORT).show();
-            }
-        });
+    @OnClick(R.id.tv_make_crash)
+    public void makeCrashOfCPlusPlus() {
+        HelloNdk.makeCrash();
+    }
+
+    @OnClick(R.id.tv_hi_c)
+    public void testNdkOfC() {
+        toast(HiNdk.getStrFromC());
     }
 }

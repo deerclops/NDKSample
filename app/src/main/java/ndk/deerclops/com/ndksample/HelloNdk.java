@@ -39,4 +39,9 @@ public class HelloNdk {
     public native void callIntanceMethod(int i);
 
     public native void callIntanceMethod(String str, long i);
+
+    /**
+     * 特意制造NDK层的崩溃
+     */
+    public static native void makeCrash();
 }

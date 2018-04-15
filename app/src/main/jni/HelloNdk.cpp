@@ -98,3 +98,8 @@ Java_ndk_deerclops_com_ndksample_HelloNdk_callIntanceMethod__Ljava_lang_String_2
 
 }
 
+JNIEXPORT void JNICALL Java_ndk_deerclops_com_ndksample_HelloNdk_makeCrash(JNIEnv * env, jclass jclass){
+    env = NULL;
+    env->NewStringUTF("here is a crash");
+}
+
