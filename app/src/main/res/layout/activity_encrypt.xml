@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_str_not_encrypted"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="请输入需要加密的字符串" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_encrypt"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="加密" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_decrypt"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="解密" />
+
+</android.support.v7.widget.LinearLayoutCompat>

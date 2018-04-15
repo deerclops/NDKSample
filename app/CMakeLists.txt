@@ -27,6 +27,11 @@ add_library(
     SHARED
     src/main/jni/HiNdkOfC.c)
 
+add_library(
+    Encrypt
+    SHARED
+    src/main/jni/encrypt_helper.c)
+
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
 # default, you only need to specify the name of the public NDK library
@@ -54,4 +59,8 @@ target_link_libraries( # Specifies the target library.
 
 target_link_libraries(
             hi
+            ${log-lib} )
+
+target_link_libraries(
+            Encrypt
             ${log-lib} )

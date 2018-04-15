@@ -3,34 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".MainActivity"
-    android:gravity="center">
+    tools:context=".MainActivity">
 
-    <TextView
+    <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tv"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:background="@color/colorPrimary"
         android:gravity="center"
-        android:text="Hello Ndk(C++)!"
-        android:background="@color/colorPrimary" />
+        android:text="Hello Ndk(C++)!" />
 
-    <TextView
+    <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tv_make_crash"
         android:layout_width="120dp"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:gravity="center"
         android:background="@color/colorAccent"
-        android:text="make crash(C++)"/>
+        android:gravity="center"
+        android:text="make crash(C++)" />
 
-    <TextView
+    <android.support.v7.widget.AppCompatTextView
         android:id="@+id/tv_hi_c"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:gravity="center"
-        android:text="Hello Ndk(C)!"
+        android:layout_marginTop="10dp"
         android:background="#dd99ff"
-        android:layout_marginTop="10dp"/>
+        android:gravity="center"
+        android:text="Hello Ndk(C)!" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_jump"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="跳转" />
 
 </android.support.v7.widget.LinearLayoutCompat>
