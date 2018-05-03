@@ -34,6 +34,24 @@
         android:text="Hello Ndk(C)!" />
 
     <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_struct"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="测试struct转java bean" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_print_struct"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="打印struct" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_struct_2_array"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="测试结构体数组转换成ArrayList" />
+
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/btn_jump"
         android:layout_width="100dp"
         android:layout_height="50dp"

@@ -15,6 +15,30 @@ extern "C" {
 JNIEXPORT jstring JNICALL Java_ndk_deerclops_com_ndksample_HiNdk_getStrFromC
   (JNIEnv *, jclass);
 
+/*
+ * Class:     ndk_deerclops_com_ndksample_HiNdk
+ * Method:    transferFromStruct
+ * Signature: ()Lndk/deerclops/com/ndksample/entity/SampleEntity;
+ */
+JNIEXPORT jobject JNICALL Java_ndk_deerclops_com_ndksample_HiNdk_transferFromStruct
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     ndk_deerclops_com_ndksample_HiNdk
+ * Method:    getSampleArrayList
+ * Signature: ()Ljava/util/ArrayList;
+ */
+JNIEXPORT jobject JNICALL Java_ndk_deerclops_com_ndksample_HiNdk_getSampleArrayList
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     ndk_deerclops_com_ndksample_HiNdk
+ * Method:    printStruct
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_ndk_deerclops_com_ndksample_HiNdk_printStruct
+  (JNIEnv *, jclass);
+
 #ifdef __cplusplus
 }
 #endif
