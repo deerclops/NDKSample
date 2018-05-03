@@ -25,7 +25,10 @@ add_library( # Sets the name of the library.
 add_library(
     hi
     SHARED
-    src/main/jni/HiNdkOfC.c)
+    src/main/jni/HiNdkOfC.c
+    # 有多个关联的C或者C++文件，直接依次往下添加
+    src/main/jni/test_add.c
+    src/main/jni/add_two.c)
 
 add_library(
     Encrypt
